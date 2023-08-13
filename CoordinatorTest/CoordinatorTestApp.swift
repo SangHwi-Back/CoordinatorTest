@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct CoordinatorTestApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  @StateObject var sessionManager = SessionManager()
+  
+  var body: some Scene {
+    WindowGroup {
+      ContentView()
+        .environmentObject(sessionManager)
     }
+  }
 }
